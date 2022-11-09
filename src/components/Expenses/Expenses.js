@@ -1,5 +1,5 @@
 import ExpenseItem from "./ExpenseItem";
-import Card from "./Card";
+import Card from "../Expenses/UI/Card";
 import "./Expenses.css"
 
 
@@ -28,7 +28,10 @@ function Expenses(params) {
       amount={params.expense[3].amount}
       date={params.expense[3].date}>
       </ExpenseItem>
+     
+
   </Card>
+
   )
 };
 
