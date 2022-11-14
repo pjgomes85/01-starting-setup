@@ -28,7 +28,8 @@ function Expenses(params) {
       amount={params.expense[3].amount}
       date={params.expense[3].date}>
       </ExpenseItem>
-     
+
+     <
 
   </Card>
 
