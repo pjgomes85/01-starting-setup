@@ -1,42 +1,43 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import ExpenseItem from "./ExpenseItem";
 import Card from "../Expenses/UI/Card";
-import "./Expenses.css"
-import ExpensesFilter from "../NewExpense/ExpensesFilter";
+import ExpensesFilter from "./ExpensesFilter";
+import "./Expenses.css";
 
 
-function Expenses(params) {
+function Expenses(props) {
   const [filteredYear, setFilteredYear] = useState('2020');
 
 
-  const filterChangeHandler = selecetedYear => {
-    setFilteredYear(selecetedYear)
+  const filterChangeHandler = selectedYear => {
+    setFilteredYear(selectedYear);
+    
   };
 
   return (
     <div>
     <Card className="expenses">
-      <ExpensesFilter seleceted={filteredYear} onChangeFilter={filterChangeHandler} />
+      <ExpensesFilter item={filteredYear} onChangeFilter={filterChangeHandler} />
       <ExpenseItem
-        title={params.expense[0].title}
-        amount={params.expense[0].amount}
-        date={params.expense[0].date}>
+        title={props.expense[0].title}
+        amount={props.expense[0].amount}
+        date={props.expense[0].date}>
         </ExpenseItem>
 
         <ExpenseItem
-        title={params.expense[1].title}
-        amount={params.expense[1].amount}
-        date={params.expense[1].date}>
+        title={props.expense[1].title}
+        amount={props.expense[1].amount}
+        date={props.expense[1].date}>
         </ExpenseItem>
         <ExpenseItem
-        title={params.expense[2].title}
-        amount={params.expense[2].amount}
-        date={params.expense[2].date}>
+        title={props.expense[2].title}
+        amount={props.expense[2].amount}
+        date={props.expense[2].date}>
         </ExpenseItem>
         <ExpenseItem
-        title={params.expense[3].title}
-        amount={params.expense[3].amount}
-        date={params.expense[3].date}>
+        title={props.expense[3].title}
+        amount={props.expense[3].amount}
+        date={props.expense[3].date}>
         </ExpenseItem>
     </Card>
     </div>
